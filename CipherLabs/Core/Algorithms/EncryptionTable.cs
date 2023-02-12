@@ -21,7 +21,7 @@ namespace CipherLabs.Core.Algorithms
                         rows, 
                         keyword.Length, 
                         false), 
-                    Tools.String.SortString(keyword.ToUpper()), 
+                    Tools.String.Sort(keyword.ToUpper()), 
                     keyword.ToUpper()), 
                 true).Replace('_', ' ').TrimEnd();
         }
@@ -38,7 +38,7 @@ namespace CipherLabs.Core.Algorithms
                         keyword.Length, 
                         true), 
                     keyword.ToUpper(), 
-                    Tools.String.SortString(keyword.ToUpper())), 
+                    Tools.String.Sort(keyword.ToUpper())), 
                 false).Replace(' ', '_');
         }
 
@@ -83,7 +83,7 @@ namespace CipherLabs.Core.Algorithms
                 }
 
                 for (int i = 0; i < matrix_rows; i++)
-                    Tools.Matrix.SwapRowItems(matrix, i, current, to.IndexOf(fromSB[current]));
+                    Tools.Matrix.SwapRowItem(matrix, i, current, to.IndexOf(fromSB[current]));
 
                 (fromSB[current], fromSB[to.IndexOf(fromSB[current])]) = (fromSB[to.IndexOf(fromSB[current])], fromSB[current]);
 

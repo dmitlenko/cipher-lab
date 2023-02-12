@@ -75,6 +75,7 @@
             this.keyX.Name = "keyX";
             this.keyX.Size = new System.Drawing.Size(136, 24);
             this.keyX.TabIndex = 31;
+            this.keyX.Text = "531972648";
             // 
             // label2
             // 
@@ -93,6 +94,7 @@
             this.keyY.Name = "keyY";
             this.keyY.Size = new System.Drawing.Size(136, 24);
             this.keyY.TabIndex = 35;
+            this.keyY.Text = "631524";
             // 
             // DoublePermutationTableControl
             // 

@@ -50,6 +50,7 @@
             this.textOriginal.Name = "textOriginal";
             this.textOriginal.Size = new System.Drawing.Size(248, 216);
             this.textOriginal.TabIndex = 1;
+            this.textOriginal.Text = "с__нсійті_жо_іо_сььои_аноївнеїбшгхя_явбемч,ьттткоН_тоа";
             // 
             // textResult
             // 

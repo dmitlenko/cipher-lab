@@ -10,18 +10,42 @@ namespace CipherLabs.Core.Algorithms
         {
             CheckArguments(phrase, vKeyword, hKeyword);
 
-            var matrix = GenerateMatrix(phrase, hKeyword.Length, vKeyword.Length, true);
-
-            return Tools.Matrix.ReadCharMatrix(matrix, false);
+            return Tools.Matrix.ReadCharMatrix(
+                MakeSwaps(
+                    MakeSwaps(
+                        GenerateMatrix(
+                            phrase,
+                            hKeyword.Length,
+                            vKeyword.Length,
+                            false),
+                        Tools.String.Sort(hKeyword),
+                        hKeyword,
+                        false),
+                    Tools.String.Sort(vKeyword),
+                    vKeyword,
+                    true),
+                true).Replace('_', EmptyCharacter).TrimEnd();
         }
 
         public string Encode(string phrase, string vKeyword, string hKeyword)
         {
             CheckArguments(phrase, vKeyword, hKeyword);
 
-            var matrix = GenerateMatrix(phrase, hKeyword.Length, vKeyword.Length, false);
-
-            return Tools.Matrix.ReadCharMatrix(matrix, true);
+            return Tools.Matrix.ReadCharMatrix(
+                MakeSwaps(
+                    MakeSwaps(
+                        GenerateMatrix(
+                            phrase,
+                            hKeyword.Length,
+                            vKeyword.Length,
+                            true),
+                        vKeyword,
+                        Tools.String.Sort(vKeyword),
+                        true),
+                    hKeyword,
+                    Tools.String.Sort(hKeyword),
+                    false),
+                false).Replace(EmptyCharacter, '_');
         }
 
         private void CheckArguments(string phrase, string vKeyword, string hKeyword)
@@ -53,10 +77,10 @@ namespace CipherLabs.Core.Algorithms
             return matrix;
         }
 
-        private char[,] MakeColumnSwaps(char[,] matrix, string from, string to)
+        private char[,] MakeSwaps(char[,] matrix, string from, string to, bool columns)
         {
             StringBuilder fromSB = new StringBuilder(from);
-            int current = 0, matrix_rows = matrix.GetLength(0);
+            int current = 0, matrix_rows = matrix.GetLength(0), matrix_cols = matrix.GetLength(1);
 
             while (fromSB.ToString() != to)
             {
@@ -68,8 +92,12 @@ namespace CipherLabs.Core.Algorithms
                     continue;
                 }
 
-                for (int i = 0; i < matrix_rows; i++)
-                    Tools.Matrix.SwapRowItems(matrix, i, current, to.IndexOf(fromSB[current]));
+                if (columns)
+                    for (int i = 0; i < matrix_rows; i++)
+                        Tools.Matrix.SwapRowItem(matrix, i, current, to.IndexOf(fromSB[current]));
+                else
+                    for (int i = 0; i < matrix_cols; i++)
+                        Tools.Matrix.SwapColumnItem(matrix, i, current, to.IndexOf(fromSB[current]));
 
                 (fromSB[current], fromSB[to.IndexOf(fromSB[current])]) = (fromSB[to.IndexOf(fromSB[current])], fromSB[current]);
 

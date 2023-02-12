@@ -35,7 +35,7 @@ namespace CipherLabs.Controls
         {
             try
             {
-                ResultTextBox.Text = doublePermutationTable.Encode(OriginalTextBox.Text, keyX.Text, keyY.Text);
+                ResultTextBox.Text = doublePermutationTable.Decode(OriginalTextBox.Text, keyX.Text, keyY.Text);
             }
             catch (CipherException ex)
             {
