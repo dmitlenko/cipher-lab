@@ -55,32 +55,16 @@ namespace CipherLabs.Core
             public static bool IsFullyEmpty(string str) => string.IsNullOrEmpty(str) || string.IsNullOrWhiteSpace(str);
             public static int MaximumDigit(string str)
             {
-                int max = int.MinValue;
+                var arr = SortString(str).Select(ch => ch - '0').ToArray();
 
-                foreach (char c in str.ToCharArray())
-                    if (char.IsNumber(c))
-                    {
-                        if (char.GetNumericValue(c) > max)
-                            max = (int)char.GetNumericValue(c);
-                    }
-                    else throw new ArgumentException();
-
-                return max == int.MinValue ? -1 : max;
+                return arr[arr.Length - 1];
             }
 
             public static int MinimumDigit(string str)
             {
-                int min = int.MaxValue;
+                var arr = SortString(str).Select(ch => ch - '0').ToArray();
 
-                foreach (char c in str.ToCharArray())
-                    if (char.IsNumber(c))
-                    {
-                        if (char.GetNumericValue(c) < min)
-                            min = (int)char.GetNumericValue(c);
-                    }
-                    else throw new ArgumentException();
-
-                return min == int.MaxValue ? -1 : min;
+                return arr[0];
             }
 
             public static string ShiftString(string s, int count) => (s + s).Substring(s.Length - count, s.Length);
