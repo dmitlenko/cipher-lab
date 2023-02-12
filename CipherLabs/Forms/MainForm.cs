@@ -30,6 +30,9 @@ namespace CipherLabs.Forms
                 case 3:
                     cipherControl = new EncryptionTableControl(textOriginal, textResult);
                     break;
+                case 4:
+                    cipherControl = new DoublePermutationTableControl(textOriginal, textResult);
+                    break;
             }
 
             cipherPanel.Controls.Clear();

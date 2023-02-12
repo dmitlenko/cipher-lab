@@ -120,7 +120,8 @@
             "Шифр Цезаря",
             "Шифр Цезаря з ключовим словом",
             "Афінна система підстановки Цезаря",
-            "Шифрувальні таблиці"});
+            "Шифрувальні таблиці",
+            "Шифрувальні таблиці (подвійна перестановка)"});
             this.algorithms.Location = new System.Drawing.Point(8, 8);
             this.algorithms.Name = "algorithms";
             this.algorithms.Size = new System.Drawing.Size(505, 24);

@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\DoublePermutationTableControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DoublePermutationTableControl.Designer.cs">
+      <DependentUpon>DoublePermutationTableControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\EncryptionTableControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -59,6 +65,7 @@
     <Compile Include="Core\Algorithms\AffineCipher.cs" />
     <Compile Include="Core\Algorithms\CaesarCipher.cs" />
     <Compile Include="Core\Algorithms\CaesarCipherKeyword.cs" />
+    <Compile Include="Core\Algorithms\DoublePermutationTable.cs" />
     <Compile Include="Core\Algorithms\EncryptionTable.cs" />
     <Compile Include="Core\Alphabets.cs" />
     <Compile Include="Core\CipherException.cs" />
@@ -89,6 +96,9 @@
     <Compile Include="Controls\CaesarCipherKeywordControl.Designer.cs">
       <DependentUpon>CaesarCipherKeywordControl.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Controls\DoublePermutationTableControl.resx">
+      <DependentUpon>DoublePermutationTableControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\EncryptionTableControl.resx">
       <DependentUpon>EncryptionTableControl.cs</DependentUpon>
     </EmbeddedResource>
