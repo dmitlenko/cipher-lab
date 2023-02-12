@@ -12,13 +12,13 @@ using System.Windows.Forms;
 
 namespace CipherLabs.Controls
 {
-    public partial class EncryptionTablesControl : UserControl
+    public partial class EncryptionTableControl : UserControl
     {
         private EncryptionTables encryptionTables = new EncryptionTables();
         public string Alphabet { get; set; }
         public TextBox OriginalTextBox { get; private set; }
         public TextBox ResultTextBox { get; private set; }
-        public EncryptionTablesControl(TextBox originalTextBox, TextBox resultTextBox)
+        public EncryptionTableControl(TextBox originalTextBox, TextBox resultTextBox)
         {
             InitializeComponent();
 

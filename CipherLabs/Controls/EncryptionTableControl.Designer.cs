@@ -1,6 +1,6 @@
 ﻿namespace CipherLabs.Controls
 {
-    partial class EncryptionTablesControl
+    partial class EncryptionTableControl
     {
         /// <summary> 
         /// Required designer variable.

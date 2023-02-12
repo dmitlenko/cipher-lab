@@ -4,9 +4,9 @@ using System.Text;
 
 namespace CipherLabs.Core.Algorithms
 {
-    public class EncryptionTables
+    public class EncryptionTable
     {
-        public EncryptionTables()
+        public EncryptionTable()
         { }
 
         public char EmptyCharacter { get; set; } = ' ';
