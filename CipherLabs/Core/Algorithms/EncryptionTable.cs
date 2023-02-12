@@ -15,7 +15,7 @@ namespace CipherLabs.Core.Algorithms
         {
             CheckArguments(phrase, keyword, rows);
 
-            var matrix = MakeSwaps(GenerateMatrix(phrase, rows, keyword.Length, false), SortKeyword(keyword), keyword.ToUpper());
+            var matrix = MakeSwaps(GenerateMatrix(phrase, rows, keyword.Length, false), Tools.SortString(keyword.ToUpper()), keyword.ToUpper());
             string ret = string.Empty;
 
             for (int i = 0; i < keyword.Length; i++)
@@ -29,7 +29,7 @@ namespace CipherLabs.Core.Algorithms
         {
             CheckArguments(phrase, keyword, rows);
 
-            var matrix = MakeSwaps(GenerateMatrix(phrase, rows, keyword.Length, true), keyword.ToUpper(), SortKeyword(keyword));
+            var matrix = MakeSwaps(GenerateMatrix(phrase, rows, keyword.Length, true), keyword.ToUpper(), Tools.SortString(keyword.ToUpper()));
             string ret = string.Empty;
 
             for (int i = 0; i < rows; i++)
@@ -88,11 +88,6 @@ namespace CipherLabs.Core.Algorithms
             }
 
             return matrix;
-        }
-
-        private string SortKeyword(string keyword)
-        {
-            return string.Concat(keyword.ToUpper().OrderBy(c => c));
         }
     }
 }
