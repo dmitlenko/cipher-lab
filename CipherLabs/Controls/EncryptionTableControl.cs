@@ -14,7 +14,7 @@ namespace CipherLabs.Controls
 {
     public partial class EncryptionTableControl : UserControl
     {
-        private EncryptionTables encryptionTables = new EncryptionTables();
+        private EncryptionTable encryptionTables = new EncryptionTable();
         public string Alphabet { get; set; }
         public TextBox OriginalTextBox { get; private set; }
         public TextBox ResultTextBox { get; private set; }

@@ -28,7 +28,7 @@ namespace CipherLabs.Forms
                     cipherControl = new AffineCipherControl(textOriginal, textResult);
                     break;
                 case 3:
-                    cipherControl = new EncryptionTablesControl(textOriginal, textResult);
+                    cipherControl = new EncryptionTableControl(textOriginal, textResult);
                     break;
             }
 

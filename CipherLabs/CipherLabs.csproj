@@ -50,16 +50,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\EncryptionTablesControl.cs">
+    <Compile Include="Controls\EncryptionTableControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\EncryptionTablesControl.Designer.cs">
-      <DependentUpon>EncryptionTablesControl.cs</DependentUpon>
+    <Compile Include="Controls\EncryptionTableControl.Designer.cs">
+      <DependentUpon>EncryptionTableControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Core\Algorithms\AffineCipher.cs" />
     <Compile Include="Core\Algorithms\CaesarCipher.cs" />
     <Compile Include="Core\Algorithms\CaesarCipherKeyword.cs" />
-    <Compile Include="Core\Algorithms\EncryptionTables.cs" />
+    <Compile Include="Core\Algorithms\EncryptionTable.cs" />
     <Compile Include="Core\Alphabets.cs" />
     <Compile Include="Core\CipherException.cs" />
     <Compile Include="Core\Tools.cs" />
@@ -89,8 +89,8 @@
     <Compile Include="Controls\CaesarCipherKeywordControl.Designer.cs">
       <DependentUpon>CaesarCipherKeywordControl.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Controls\EncryptionTablesControl.resx">
-      <DependentUpon>EncryptionTablesControl.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\EncryptionTableControl.resx">
+      <DependentUpon>EncryptionTableControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
