@@ -5,9 +5,6 @@ namespace CipherLabs.Core.Algorithms
 {
     public class EncryptionTable
     {
-        public EncryptionTable()
-        { }
-
         public char EmptyCharacter { get; set; } = ' ';
 
         public string Decode(string phrase, string keyword, int rows)
@@ -17,12 +14,12 @@ namespace CipherLabs.Core.Algorithms
             return Tools.Matrix.ReadCharMatrix(
                 MakeColumnSwaps(
                     GenerateMatrix(
-                        phrase, 
-                        rows, 
-                        keyword.Length, 
-                        false), 
-                    Tools.String.Sort(keyword.ToUpper()), 
-                    keyword.ToUpper()), 
+                        phrase,
+                        rows,
+                        keyword.Length,
+                        false),
+                    Tools.String.Sort(keyword.ToUpper()),
+                    keyword.ToUpper()),
                 true).Replace('_', ' ').TrimEnd();
         }
 
@@ -33,12 +30,12 @@ namespace CipherLabs.Core.Algorithms
             return Tools.Matrix.ReadCharMatrix(
                 MakeColumnSwaps(
                     GenerateMatrix(
-                        phrase, 
-                        rows, 
-                        keyword.Length, 
-                        true), 
-                    keyword.ToUpper(), 
-                    Tools.String.Sort(keyword.ToUpper())), 
+                        phrase,
+                        rows,
+                        keyword.Length,
+                        true),
+                    keyword.ToUpper(),
+                    Tools.String.Sort(keyword.ToUpper())),
                 false).Replace(' ', '_');
         }
 
