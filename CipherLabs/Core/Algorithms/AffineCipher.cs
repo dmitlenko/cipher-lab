@@ -41,7 +41,7 @@ namespace CipherLabs.Core.Algorithms
             for (int i = 0; i < result.Length; i++)
                 if (alphabet.Contains(char.ToUpper(result[i])))
                 {
-                    result[i] = alphabet[Tools.Mod(a * alphabet.IndexOf(char.ToUpper(result[i])) + b, alphabet.Length)]; 
+                    result[i] = alphabet[Tools.Number.Mod(a * alphabet.IndexOf(char.ToUpper(result[i])) + b, alphabet.Length)]; 
 
                     if (char.IsLower(phrase[i])) result[i] = char.ToLower(result[i]);
                 }
@@ -68,7 +68,7 @@ namespace CipherLabs.Core.Algorithms
             for (int i = 0; i < result.Length; i++)
                 if (alphabet.Contains(char.ToUpper(result[i])))
                 {
-                    result[i] = alphabet[Tools.Mod(invA * (alphabet.IndexOf(char.ToUpper(result[i])) + alphabet.Length - b), alphabet.Length)];
+                    result[i] = alphabet[Tools.Number.Mod(invA * (alphabet.IndexOf(char.ToUpper(result[i])) + alphabet.Length - b), alphabet.Length)];
 
                     if (char.IsLower(phrase[i])) result[i] = char.ToLower(result[i]);
                 }

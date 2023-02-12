@@ -49,7 +49,7 @@ namespace CipherLabs.Core.Algorithms
             for (int i = 0; i < stringBuilder.Length; i++)
                 if (alphabet.Contains(stringBuilder[i].ToString().ToUpper()))
                 {
-                    stringBuilder[i] = alphabet[index: Tools.Mod(alphabet.IndexOf(char.ToUpper(stringBuilder[i])) + key, alphabet.Length)];
+                    stringBuilder[i] = alphabet[index: Tools.Number.Mod(alphabet.IndexOf(char.ToUpper(stringBuilder[i])) + key, alphabet.Length)];
 
                     if (char.IsLower(phrase[i])) stringBuilder[i] = char.ToLower(stringBuilder[i]);
                 }

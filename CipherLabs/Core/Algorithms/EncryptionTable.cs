@@ -14,14 +14,14 @@ namespace CipherLabs.Core.Algorithms
         {
             CheckArguments(phrase, keyword, rows);
 
-            return Tools.ReadCharMatrix(
+            return Tools.Matrix.ReadCharMatrix(
                 MakeColumnSwaps(
                     GenerateMatrix(
                         phrase, 
                         rows, 
                         keyword.Length, 
                         false), 
-                    Tools.SortString(keyword.ToUpper()), 
+                    Tools.String.SortString(keyword.ToUpper()), 
                     keyword.ToUpper()), 
                 true).Replace('_', ' ').TrimEnd();
         }
@@ -30,7 +30,7 @@ namespace CipherLabs.Core.Algorithms
         {
             CheckArguments(phrase, keyword, rows);
 
-            return Tools.ReadCharMatrix(
+            return Tools.Matrix.ReadCharMatrix(
                 MakeColumnSwaps(
                     GenerateMatrix(
                         phrase, 
@@ -38,13 +38,13 @@ namespace CipherLabs.Core.Algorithms
                         keyword.Length, 
                         true), 
                     keyword.ToUpper(), 
-                    Tools.SortString(keyword.ToUpper())), 
+                    Tools.String.SortString(keyword.ToUpper())), 
                 false).Replace(' ', '_');
         }
 
         private void CheckArguments(string phrase, string keyword, int rows)
         {
-            if (string.IsNullOrEmpty(keyword) || string.IsNullOrWhiteSpace(keyword))
+            if (Tools.String.IsFullyEmpty(keyword))
                 throw new CipherException("Keyword is empty or null");
             if (string.Join("", new HashSet<char>(keyword.ToUpper())) != keyword.ToUpper())
                 throw new CipherException("Keyword has duplicate characters");
@@ -74,7 +74,7 @@ namespace CipherLabs.Core.Algorithms
 
             while (fromSB.ToString() != to)
             {
-                if (current >= from.Length) current = Tools.Mod(current, from.Length);
+                if (current >= from.Length) current = Tools.Number.Mod(current, from.Length);
 
                 if (fromSB[current] == to[current])
                 {
@@ -83,7 +83,7 @@ namespace CipherLabs.Core.Algorithms
                 }
 
                 for (int i = 0; i < matrix_rows; i++)
-                    Tools.SwapRowItems(matrix, i, current, to.IndexOf(fromSB[current]));
+                    Tools.Matrix.SwapRowItems(matrix, i, current, to.IndexOf(fromSB[current]));
 
                 (fromSB[current], fromSB[to.IndexOf(fromSB[current])]) = (fromSB[to.IndexOf(fromSB[current])], fromSB[current]);
 
