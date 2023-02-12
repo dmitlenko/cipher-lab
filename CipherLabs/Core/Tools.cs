@@ -21,7 +21,9 @@ namespace CipherLabs.Core
                 return ret;
             }
 
-            public static void SwapRowItems<T>(T[,] matrix, int row, int from, int to) => (matrix[row, from], matrix[row, to]) = (matrix[row, to], matrix[row, from]);
+            public static void SwapRowItem<T>(T[,] matrix, int row, int from, int to) => (matrix[row, from], matrix[row, to]) = (matrix[row, to], matrix[row, from]);
+
+            public static void SwapColumnItem<T>(T[,] matrix, int col, int from, int to) => (matrix[from, col], matrix[to, col]) = (matrix[to, col], matrix[from, col]);
         }
 
         public static class Number
@@ -55,21 +57,21 @@ namespace CipherLabs.Core
             public static bool IsFullyEmpty(string str) => string.IsNullOrEmpty(str) || string.IsNullOrWhiteSpace(str);
             public static int MaximumDigit(string str)
             {
-                var arr = SortString(str).Select(ch => ch - '0').ToArray();
+                var arr = Sort(str).Select(ch => ch - '0').ToArray();
 
                 return arr[arr.Length - 1];
             }
 
             public static int MinimumDigit(string str)
             {
-                var arr = SortString(str).Select(ch => ch - '0').ToArray();
+                var arr = Sort(str).Select(ch => ch - '0').ToArray();
 
                 return arr[0];
             }
 
             public static string ShiftString(string s, int count) => (s + s).Substring(s.Length - count, s.Length);
 
-            public static string SortString(string keyword) => string.Concat(keyword.OrderBy(c => c));
+            public static string Sort(string keyword) => string.Concat(keyword.OrderBy(c => c));
         }
 
         //public static void SwapRows<T>(T[,] matrix, int from, int to) => (matrix[from], matrix[to]) = (matrix[to], matrix[from]);
