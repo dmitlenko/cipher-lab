@@ -8,14 +8,11 @@ namespace CipherLabs.Forms
     {
         private UserControl cipherControl;
 
-        public MainForm()
+        public MainForm(int algorithmIndex = 0)
         {
             InitializeComponent();
-        }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            algorithms.SelectedIndex = 0;
+            algorithms.SelectedIndex = algorithmIndex;
         }
 
         private void algoDropDown_SelectedIndexChanged(object sender, EventArgs e)

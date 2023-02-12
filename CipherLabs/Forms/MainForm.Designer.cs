@@ -32,13 +32,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.textOriginal = new System.Windows.Forms.TextBox();
             this.textResult = new System.Windows.Forms.TextBox();
+            this.contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.copyToOriginal = new System.Windows.Forms.ToolStripMenuItem();
+            this.replaceOriginal = new System.Windows.Forms.ToolStripMenuItem();
             this.resultTitle = new System.Windows.Forms.Label();
             this.cipherPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.algorithms = new System.Windows.Forms.ComboBox();
-            this.contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.copyToOriginal = new System.Windows.Forms.ToolStripMenuItem();
-            this.replaceOriginal = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,6 +62,28 @@
             this.textResult.ReadOnly = true;
             this.textResult.Size = new System.Drawing.Size(248, 216);
             this.textResult.TabIndex = 6;
+            // 
+            // contextMenu
+            // 
+            this.contextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.copyToOriginal,
+            this.replaceOriginal});
+            this.contextMenu.Name = "contextMenu";
+            this.contextMenu.Size = new System.Drawing.Size(207, 48);
+            // 
+            // copyToOriginal
+            // 
+            this.copyToOriginal.Name = "copyToOriginal";
+            this.copyToOriginal.Size = new System.Drawing.Size(206, 22);
+            this.copyToOriginal.Text = "Копіювати до оригіналу";
+            this.copyToOriginal.Click += new System.EventHandler(this.copyToOriginal_Click);
+            // 
+            // replaceOriginal
+            // 
+            this.replaceOriginal.Name = "replaceOriginal";
+            this.replaceOriginal.Size = new System.Drawing.Size(206, 22);
+            this.replaceOriginal.Text = "Замінити оргінал";
+            this.replaceOriginal.Click += new System.EventHandler(this.replaceOriginal_Click);
             // 
             // resultTitle
             // 
@@ -105,28 +127,6 @@
             this.algorithms.TabIndex = 12;
             this.algorithms.SelectedIndexChanged += new System.EventHandler(this.algoDropDown_SelectedIndexChanged);
             // 
-            // contextMenu
-            // 
-            this.contextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.copyToOriginal,
-            this.replaceOriginal});
-            this.contextMenu.Name = "contextMenu";
-            this.contextMenu.Size = new System.Drawing.Size(207, 48);
-            // 
-            // copyToOriginal
-            // 
-            this.copyToOriginal.Name = "copyToOriginal";
-            this.copyToOriginal.Size = new System.Drawing.Size(206, 22);
-            this.copyToOriginal.Text = "Копіювати до оригіналу";
-            this.copyToOriginal.Click += new System.EventHandler(this.copyToOriginal_Click);
-            // 
-            // replaceOriginal
-            // 
-            this.replaceOriginal.Name = "replaceOriginal";
-            this.replaceOriginal.Size = new System.Drawing.Size(206, 22);
-            this.replaceOriginal.Text = "Замінити оргінал";
-            this.replaceOriginal.Click += new System.EventHandler(this.replaceOriginal_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -143,8 +143,7 @@
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ПМЗІ ЛР 3";
-            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Text = "Cipher Lab";
             this.contextMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
