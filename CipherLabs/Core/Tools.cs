@@ -21,6 +21,20 @@ namespace CipherLabs.Core
 
         public static string SortString(string keyword) => string.Concat(keyword.OrderBy(c => c));
 
+        public static string ReadCharMatrix(char[,] matrix, bool vertical, string ret = "")
+        {
+            if (vertical)
+                for (int i = 0; i < matrix.GetLength(1); i++)
+                    for (int j = 0; j < matrix.GetLength(0); j++)
+                        ret += matrix[j, i];
+            else
+                for (int i = 0; i < matrix.GetLength(0); i++)
+                    for (int j = 0; j < matrix.GetLength(1); j++)
+                        ret += matrix[i, j];
+
+            return ret;
+        }
+
         //public static void SwapRows<T>(T[,] matrix, int from, int to) => (matrix[from], matrix[to]) = (matrix[to], matrix[from]);
     }
 }
