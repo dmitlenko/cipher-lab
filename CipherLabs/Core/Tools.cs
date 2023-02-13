@@ -85,6 +85,14 @@ namespace CipherLabs.Core
 
             public static string RemoveDuplicates(string str) => string.Join("", str.ToCharArray().Distinct());
 
+            public static bool BelongsTo(string str, string to)
+            {
+                foreach (char c in str)
+                    if (!to.Contains(c))
+                        return false;
+
+                return true;
+            }
         }
 
         //public static void SwapRows<T>(T[,] matrix, int from, int to) => (matrix[from], matrix[to]) = (matrix[to], matrix[from]);
