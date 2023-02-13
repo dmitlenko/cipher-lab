@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Text;
 
 namespace CipherLabs.Core.Algorithms
@@ -67,26 +66,33 @@ namespace CipherLabs.Core.Algorithms
                 (int row1, int col1) = Tools.Matrix.GetValueCoords(matrix, keyword[i]);
                 (int row2, int col2) = Tools.Matrix.GetValueCoords(matrix, keyword[i + 1]);
 
-                if (row1 == row2 && col1 == col2)
-                    result += new string(new char[] { 
-                        matrix[Tools.Number.Mod((row1 + inc), rows), Tools.Number.Mod((col1 + inc), cols)],
-                        matrix[Tools.Number.Mod((row1 + inc), rows), Tools.Number.Mod((col1 + inc), cols)] 
+                if (row1 >= 0 && row2 >= 0 && col1 >= 0 && col2 >= 0)
+                {
+                    if (row1 == row2 && col1 == col2)
+                        result += new string(new char[] {
+                        matrix[Tools.Number.Mod(row1 + inc, rows), Tools.Number.Mod(col1 + inc, cols)],
+                        matrix[Tools.Number.Mod(row1 + inc, rows), Tools.Number.Mod(col1 + inc, cols)]
                     });
-                else if (row1 == row2)
-                    result += new string(new char[] { 
-                        matrix[row1, Tools.Number.Mod((col1 + inc), cols)], 
-                        matrix[row1, Tools.Number.Mod((col2 + inc), cols)] 
+                    else if (row1 == row2)
+                        result += new string(new char[] {
+                        matrix[row1, Tools.Number.Mod(col1 + inc, cols)],
+                        matrix[row1, Tools.Number.Mod(col2 + inc, cols)]
                     });
-                else if (col1 == col2)
-                    result += new string(new char[] { 
-                        matrix[Tools.Number.Mod((row1 + inc), rows), col1], 
-                        matrix[Tools.Number.Mod((row2 + inc), rows), col1] 
+                    else if (col1 == col2)
+                        result += new string(new char[] {
+                        matrix[Tools.Number.Mod(row1 + inc, rows), col1],
+                        matrix[Tools.Number.Mod(row2 + inc, rows), col1]
                     });
+                    else
+                        result += new string(new char[] {
+                        matrix[row1, col2],
+                        matrix[row2, col1]
+                    });
+                }
                 else
-                    result += new string(new char[] { 
-                        matrix[row1, col2], 
-                        matrix[row2, col1] 
-                    });
+                {
+                    result += new string(new char[] { keyword[i], keyword[i + 1] });
+                }
             }
 
             return result;
@@ -97,7 +103,7 @@ namespace CipherLabs.Core.Algorithms
             original = PreparePhrase(original, false);
             StringBuilder output = new StringBuilder(phrase);
 
-            for(int i = 0; i < original.Length; i++)
+            for (int i = 0; i < original.Length; i++)
                 if (char.IsUpper(original[i]))
                     output[i] = char.ToUpper(output[i]);
 
