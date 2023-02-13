@@ -38,7 +38,7 @@ namespace CipherLabs.Core
 
         public static class Number
         {
-            public static int Mod(int a, int n) => (a % n) < 0 ? (a % n) + n : (a % n);
+            public static int Mod(int a, int n) => (a % n + n) % n;
         }
 
         public static class String
