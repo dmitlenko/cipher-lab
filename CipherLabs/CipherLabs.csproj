@@ -62,6 +62,12 @@
     <Compile Include="Controls\EncryptionTableControl.Designer.cs">
       <DependentUpon>EncryptionTableControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\PlayfairCipherControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PlayfairCipherControl.Designer.cs">
+      <DependentUpon>PlayfairCipherControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Core\Algorithms\AffineCipher.cs" />
     <Compile Include="Core\Algorithms\CaesarCipher.cs" />
     <Compile Include="Core\Algorithms\CaesarCipherKeyword.cs" />
@@ -102,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\EncryptionTableControl.resx">
       <DependentUpon>EncryptionTableControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PlayfairCipherControl.resx">
+      <DependentUpon>PlayfairCipherControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
