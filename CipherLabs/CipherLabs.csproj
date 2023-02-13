@@ -67,6 +67,7 @@
     <Compile Include="Core\Algorithms\CaesarCipherKeyword.cs" />
     <Compile Include="Core\Algorithms\DoublePermutationTable.cs" />
     <Compile Include="Core\Algorithms\EncryptionTable.cs" />
+    <Compile Include="Core\Algorithms\PlayfairCipher.cs" />
     <Compile Include="Core\Alphabets.cs" />
     <Compile Include="Core\CipherException.cs" />
     <Compile Include="Core\Tools.cs" />
