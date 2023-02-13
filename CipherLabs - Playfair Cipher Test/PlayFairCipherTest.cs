@@ -46,7 +46,7 @@ namespace CipherLabs___Playfair_Cipher_Test
         }
 
         [TestMethod]
-        [TestCategory("PlayfairCipher - Encode")]
+        [TestCategory("PlayfairCipher - Decode")]
         [DataRow("abcdefghijklmnopqrstuvwxyz #$%&()*,./:;?@[\\]^`{}~", "Dted", "Test", "Test")]
         [DataRow("abcdefghijklmnopqrstuvwxyz #$%&()*,./:;?@[\\]^`{}~", "mddemtfdcy", "pie", "umpalumpa ")]
         [DataRow("абвгґдеєжзиіїйклмнопрстуфхцчшщьюя #$%&()*,./:;?@[\\]^`{}~", "Ґсамґеяинтия", "Сир", "Сирний соус ")]
