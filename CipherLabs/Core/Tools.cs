@@ -25,11 +25,11 @@ namespace CipherLabs.Core
 
             public static void SwapColumnItem<T>(T[,] matrix, int col, int from, int to) => (matrix[from, col], matrix[to, col]) = (matrix[to, col], matrix[from, col]);
 
-            public static Tuple<int,int> GetValueCoords<T>(T[,] matrix, T value)
+            public static Tuple<int, int> GetValueCoords<T>(T[,] matrix, T value)
             {
-                for(int i = 0; i < matrix.GetLength(0); i++)
-                    for(int j = 0; j < matrix.GetLength(1); j++)
-                        if (matrix[i,j].Equals(value))
+                for (int i = 0; i < matrix.GetLength(0); i++)
+                    for (int j = 0; j < matrix.GetLength(1); j++)
+                        if (matrix[i, j].Equals(value))
                             return Tuple.Create(i, j);
 
                 return Tuple.Create(-1, -1);
@@ -65,6 +65,7 @@ namespace CipherLabs.Core
             }
 
             public static bool IsFullyEmpty(string str) => string.IsNullOrEmpty(str) || string.IsNullOrWhiteSpace(str);
+
             public static int MaximumDigit(string str)
             {
                 var arr = Sort(str).Select(ch => ch - '0').ToArray();

@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using CipherLabs.Core;
+﻿using CipherLabs.Core;
 using CipherLabs.Core.Algorithms;
+using System;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace CipherLabs.Controls
 {
@@ -19,15 +13,17 @@ namespace CipherLabs.Controls
         public string KeyWord { get => keyPhrase.Text; }
         public TextBox OriginalTextBox { get; private set; }
         public TextBox ResultTextBox { get; private set; }
+
         public CaesarCipherKeywordControl(TextBox originalTextBox, TextBox resultTextBox)
         {
             InitializeComponent();
-            
+
             OriginalTextBox = originalTextBox;
             ResultTextBox = resultTextBox;
 
             alphabetCombo.SelectedIndex = 0;
         }
+
         private void keyPhrase_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !
@@ -42,6 +38,7 @@ namespace CipherLabs.Controls
                 case 0:
                     caesarCipher.Alphabet = Alphabets.English;
                     break;
+
                 case 1:
                     caesarCipher.Alphabet = Alphabets.Ukrainian;
                     break;
@@ -60,6 +57,5 @@ namespace CipherLabs.Controls
         {
             ResultTextBox.Text = caesarCipher.Encode(OriginalTextBox.Text, Key, KeyWord);
         }
-
     }
 }

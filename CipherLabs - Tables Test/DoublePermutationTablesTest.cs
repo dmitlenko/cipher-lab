@@ -1,14 +1,12 @@
 ﻿using CipherLabs.Core;
 using CipherLabs.Core.Algorithms;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 
 namespace CipherLabs___Tables_Test
 {
     [TestClass]
     public class DoublePermutationTablesTest
     {
-
         [TestMethod]
         [TestCategory("DoublePermutationTable - Exceptions")]
         [ExpectedException(typeof(CipherException), "One of the keywords is empty")]

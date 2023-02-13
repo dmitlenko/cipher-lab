@@ -1,8 +1,8 @@
-﻿using System;
+﻿using CipherLabs.Core;
+using CipherLabs.Core.Algorithms;
+using System;
 using System.Linq;
 using System.Windows.Forms;
-using CipherLabs.Core;
-using CipherLabs.Core.Algorithms;
 
 namespace CipherLabs.Controls
 {

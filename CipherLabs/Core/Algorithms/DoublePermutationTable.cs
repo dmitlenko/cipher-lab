@@ -105,6 +105,6 @@ namespace CipherLabs.Core.Algorithms
             }
 
             return matrix;
-        } 
+        }
     }
 }

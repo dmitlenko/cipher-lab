@@ -1,7 +1,6 @@
 ﻿using CipherLabs.Core;
 using CipherLabs.Core.Algorithms;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 
 namespace CipherLabs___Tables_Test
 {

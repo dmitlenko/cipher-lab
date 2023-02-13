@@ -1,5 +1,4 @@
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("CipherLabs - Tables Test")]
@@ -10,9 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCopyright("Copyright ©  2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
-
 [assembly: ComVisible(false)]
-
 [assembly: Guid("57f76e5a-b788-4fe7-8a3b-4b3fb8066692")]
 
 // [assembly: AssemblyVersion("1.0.*")]

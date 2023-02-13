@@ -1,13 +1,6 @@
 ﻿using CipherLabs.Core;
 using CipherLabs.Core.Algorithms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CipherLabs.Controls
@@ -17,6 +10,7 @@ namespace CipherLabs.Controls
         private PlayfairCipher playfairCipher = new PlayfairCipher();
         public TextBox OriginalTextBox { get; private set; }
         public TextBox ResultTextBox { get; private set; }
+
         public PlayfairCipherControl(TextBox originalTextBox, TextBox resultTextBox)
         {
             InitializeComponent();
@@ -35,6 +29,7 @@ namespace CipherLabs.Controls
                 case 0:
                     playfairCipher.Alphabet = Alphabets.English;
                     break;
+
                 case 1:
                     playfairCipher.Alphabet = Alphabets.Ukrainian;
                     break;

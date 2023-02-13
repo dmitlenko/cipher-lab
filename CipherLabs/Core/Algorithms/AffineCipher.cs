@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Text;
 
 namespace CipherLabs.Core.Algorithms
@@ -41,7 +40,7 @@ namespace CipherLabs.Core.Algorithms
             for (int i = 0; i < result.Length; i++)
                 if (alphabet.Contains(char.ToUpper(result[i])))
                 {
-                    result[i] = alphabet[Tools.Number.Mod(a * alphabet.IndexOf(char.ToUpper(result[i])) + b, alphabet.Length)]; 
+                    result[i] = alphabet[Tools.Number.Mod(a * alphabet.IndexOf(char.ToUpper(result[i])) + b, alphabet.Length)];
 
                     if (char.IsLower(phrase[i])) result[i] = char.ToLower(result[i]);
                 }

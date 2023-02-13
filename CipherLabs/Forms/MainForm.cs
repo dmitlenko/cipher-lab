@@ -1,6 +1,6 @@
-﻿using System;
+﻿using CipherLabs.Controls;
+using System;
 using System.Windows.Forms;
-using CipherLabs.Controls;
 
 namespace CipherLabs.Forms
 {
@@ -17,22 +17,28 @@ namespace CipherLabs.Forms
 
         private void algoDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (algorithms.SelectedIndex) {
+            switch (algorithms.SelectedIndex)
+            {
                 case 0:
                     cipherControl = new CaesarCipherControl(textOriginal, textResult);
                     break;
+
                 case 1:
                     cipherControl = new CaesarCipherKeywordControl(textOriginal, textResult);
                     break;
+
                 case 2:
                     cipherControl = new AffineCipherControl(textOriginal, textResult);
                     break;
+
                 case 3:
                     cipherControl = new EncryptionTableControl(textOriginal, textResult);
                     break;
+
                 case 4:
                     cipherControl = new DoublePermutationTableControl(textOriginal, textResult);
                     break;
+
                 case 5:
                     cipherControl = new PlayfairCipherControl(textOriginal, textResult);
                     break;
