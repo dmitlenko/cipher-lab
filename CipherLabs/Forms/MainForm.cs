@@ -33,6 +33,9 @@ namespace CipherLabs.Forms
                 case 4:
                     cipherControl = new DoublePermutationTableControl(textOriginal, textResult);
                     break;
+                case 5:
+                    cipherControl = new PlayfairCipherControl(textOriginal, textResult);
+                    break;
             }
 
             cipherPanel.Controls.Clear();
