@@ -82,6 +82,9 @@ namespace CipherLabs.Core
             public static string ShiftString(string s, int count) => (s + s).Substring(s.Length - count, s.Length);
 
             public static string Sort(string keyword) => string.Concat(keyword.OrderBy(c => c));
+
+            public static string RemoveDuplicates(string str) => string.Join("", str.ToCharArray().Distinct());
+
         }
 
         //public static void SwapRows<T>(T[,] matrix, int from, int to) => (matrix[from], matrix[to]) = (matrix[to], matrix[from]);
