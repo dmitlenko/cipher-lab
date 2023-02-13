@@ -24,6 +24,16 @@ namespace CipherLabs.Core
             public static void SwapRowItem<T>(T[,] matrix, int row, int from, int to) => (matrix[row, from], matrix[row, to]) = (matrix[row, to], matrix[row, from]);
 
             public static void SwapColumnItem<T>(T[,] matrix, int col, int from, int to) => (matrix[from, col], matrix[to, col]) = (matrix[to, col], matrix[from, col]);
+
+            public static Tuple<int,int> GetValueCoords<T>(T[,] matrix, T value)
+            {
+                for(int i = 0; i < matrix.GetLength(0); i++)
+                    for(int j = 0; j < matrix.GetLength(1); j++)
+                        if (matrix[i,j].Equals(value))
+                            return Tuple.Create(i, j);
+
+                return Tuple.Create(-1, -1);
+            }
         }
 
         public static class Number
